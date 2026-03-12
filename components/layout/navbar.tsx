@@ -75,15 +75,7 @@ export function Navbar() {
                     : "text-white"
                 )}
               >
-                Aqsa Aulia
-              </span>
-              <span
-                className={cn(
-                  "text-xs font-semibold tracking-widest transition-colors",
-                  isScrolled ? "text-primary" : "text-blue-300"
-                )}
-              >
-                AC SERVICE
+                Aqsa Aulia AC
               </span>
             </div>
           </a>

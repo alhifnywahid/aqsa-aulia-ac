@@ -27,8 +27,7 @@ export function Footer() {
                 <Wind className="w-5 h-5 text-white" />
               </div>
               <div className="flex flex-col leading-tight">
-                <span className="font-bold text-white text-base tracking-tight">Aqsa Aulia</span>
-                <span className="text-xs font-semibold tracking-widest text-blue-400">AC SERVICE</span>
+                <span className="font-bold text-white text-base tracking-tight">Aqsa Aulia AC</span>
               </div>
             </div>
             <p className="text-sm text-slate-400 leading-relaxed">

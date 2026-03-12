@@ -1,16 +1,19 @@
+import c from "@/site.config"
+
+// Semua data bisnis diambil dari site.config.ts
+// Edit file site.config.ts untuk mengubah informasi bisnis.
 export const siteConfig = {
-  name: "Aqsa Aulia AC",
-  tagline: "Solusi AC Terpercaya untuk Rumah & Bisnis Anda",
-  description:
-    "Jasa service, pemasangan, bongkar pasang, dan jual beli AC terpercaya. Melayani dengan profesional, bergaransi, dan harga bersaing.",
-  whatsapp: "6281234567890",
-  whatsappDisplay: "+62 812-3456-7890",
-  email: "aqsaauliaac@gmail.com",
-  address: "Jl. Raya No. 123, Kota Anda",
-  operationalHours: "Senin - Sabtu: 08.00 - 20.00 WIB",
+  name: c.businessName,
+  tagline: c.tagline,
+  description: c.description,
+  whatsapp: c.whatsapp,
+  whatsappDisplay: c.whatsappDisplay,
+  email: c.email,
+  address: c.address,
+  operationalHours: c.operationalHours,
   social: {
-    instagram: "https://instagram.com/aqsaauliaac",
-    facebook: "https://facebook.com/aqsaauliaac",
+    instagram: c.instagram,
+    facebook: c.facebook,
   },
 }
 
@@ -255,8 +258,8 @@ export const testimonials = [
 ]
 
 export const stats = [
-  { value: "2000+", label: "Pelanggan Puas" },
-  { value: "5+", label: "Tahun Pengalaman" },
-  { value: "10K+", label: "Unit AC Ditangani" },
-  { value: "98%", label: "Tingkat Kepuasan" },
+  { value: c.stats.customers, label: "Pelanggan Puas" },
+  { value: c.stats.experience, label: "Tahun Pengalaman" },
+  { value: c.stats.units, label: "Unit AC Ditangani" },
+  { value: c.stats.satisfaction, label: "Tingkat Kepuasan" },
 ]

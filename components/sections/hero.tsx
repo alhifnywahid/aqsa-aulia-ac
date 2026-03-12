@@ -2,6 +2,7 @@
 
 import { ArrowRight, Shield, Star, MessageCircle, ChevronDown } from "lucide-react"
 import { siteConfig, stats } from "@/lib/constants"
+import config from "@/site.config"
 
 export function Hero() {
   const scrollToSection = (id: string) => {
@@ -63,7 +64,7 @@ export function Hero() {
         {/* Pill badge */}
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/15 border border-blue-400/25 text-blue-300 text-sm font-medium mb-8 backdrop-blur-sm">
           <div className="w-2 h-2 rounded-full bg-blue-400 animate-pulse" />
-          Melayani Seluruh Area Kota
+          Melayani {config.serviceArea}
           <div className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
           Buka 6 Hari Seminggu
         </div>

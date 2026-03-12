@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="logo.png" alt="Aqsa Aulia AC" width="120" />
+<img src="public/images/logo.png" alt="Aqsa Aulia AC" width="120" />
 
 # Aqsa Aulia AC
 
