@@ -1,7 +1,8 @@
 import type { Metadata } from "next"
 import { Inter, Plus_Jakarta_Sans } from "next/font/google"
 import "./globals.css"
-import { ThemeProvider } from "@/components/theme-provider"
+import { ThemeProvider } from "@/components/providers/theme-provider"
+import { LanguageProvider } from "@/lib/i18n/context"
 import { cn } from "@/lib/utils"
 
 const fontSans = Inter({
@@ -50,7 +51,9 @@ export default function RootLayout({
       className={cn("antialiased", fontSans.variable, fontDisplay.variable)}
     >
       <body>
-        <ThemeProvider>{children}</ThemeProvider>
+        <ThemeProvider>
+          <LanguageProvider>{children}</LanguageProvider>
+        </ThemeProvider>
       </body>
     </html>
   )
