@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import Script from "next/script"
 import { Inter, Plus_Jakarta_Sans } from "next/font/google"
 import "./globals.css"
 import { ClientProviders } from "@/components/providers/client-providers"
@@ -193,6 +194,18 @@ export default function RootLayout({
         <JsonLd />
         <WebSiteJsonLd />
       </head>
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=G-E2J1SPZ8EM"
+        strategy="afterInteractive"
+      />
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-E2J1SPZ8EM');
+        `}
+      </Script>
       <body>
         <ClientProviders>
           <Navbar />
