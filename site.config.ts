@@ -1,5 +1,5 @@
 // =======================================================
-//  KONFIGURASI WEBSITE AQSA AULIA AC
+//  KONFIGURASI WEBSITE UD AQSA AULIA AC
 // =======================================================
 //  Edit file ini untuk mengubah informasi bisnis Anda.
 //  Tidak perlu menyentuh file kode lainnya!
@@ -11,14 +11,14 @@ const config = {
   // -------------------------------------------------------
 
   /** Nama bisnis yang tampil di website dan tab browser */
-  businessName: "Aqsa Aulia AC",
+  businessName: "UD. AQSA AULIA AC",
 
   /** Tagline singkat bisnis Anda */
-  tagline: "Solusi AC Terpercaya untuk Rumah & Bisnis Anda",
+  tagline: "Spesialis Jual Beli AC Bekas Terpercaya",
 
   /** Deskripsi bisnis (dipakai di meta SEO dan hero section) */
   description:
-    "Jasa service, pemasangan, bongkar pasang, dan jual beli AC terpercaya. Melayani dengan profesional, bergaransi, dan harga bersaing.",
+    "Terima beli AC bekas segala kondisi, AC bekas mati, AC bekas tidak dingin. AC bekas kantor, gudang, pabrik, rumah, kontrakan. Siap jemput kelokasi jika harga cocok.",
 
   // -------------------------------------------------------
   // KONTAK
@@ -27,35 +27,48 @@ const config = {
   /**
    * Nomor WhatsApp bisnis.
    * Format: 62xxxxxxxxxx (tanpa tanda + atau 0 di depan)
-   * Contoh: "6281234567890"
    */
-  whatsapp: "6281234567890",
+  whatsapp: "6281937930111",
 
   /**
    * Tampilan nomor WhatsApp di website.
-   * Contoh: "+62 812-3456-7890"
    */
-  whatsappDisplay: "+62 812-3456-7890",
+  whatsappDisplay: "0819-3793-0111",
 
   /** Alamat email bisnis */
-  email: "aqsaauliaac@gmail.com",
+  email: "admin@udaqsaauliaac.com",
 
   // -------------------------------------------------------
   // LOKASI
   // -------------------------------------------------------
 
   /** Alamat lengkap bisnis */
-  address: "Jl. Raya No. 123, Kota Anda",
+  address: "Jabodetabek, Indonesia",
 
   /** Kota/area layanan (dipakai di hero section) */
-  serviceArea: "Seluruh Area Kota",
+  serviceArea: "Jabodetabek",
+
+  /** Area layanan lengkap */
+  serviceAreas: [
+    "Jakarta Pusat",
+    "Jakarta Utara",
+    "Jakarta Timur",
+    "Jakarta Selatan",
+    "Jakarta Barat",
+    "Kota Bogor",
+    "Kota Bekasi",
+    "Kabupaten Tangerang",
+    "Kota Tangerang",
+    "Tangerang Selatan",
+    "Ciledug",
+  ],
 
   // -------------------------------------------------------
   // JAM OPERASIONAL
   // -------------------------------------------------------
 
   /** Jam operasional yang tampil di website dan footer */
-  operationalHours: "Senin - Sabtu: 08.00 - 20.00 WIB",
+  operationalHours: "Senin - Minggu: 08.00 - 10.00 WIB",
 
   // -------------------------------------------------------
   // MEDIA SOSIAL
@@ -72,10 +85,10 @@ const config = {
   // -------------------------------------------------------
 
   stats: {
-    customers: "2000+",       // Jumlah pelanggan puas
-    experience: "5+",         // Tahun pengalaman
-    units: "10K+",            // Unit AC yang sudah ditangani
-    satisfaction: "98%",      // Tingkat kepuasan pelanggan
+    customers: "3000+",       // AC yang sudah dibeli
+    experience: "7+",         // Tahun pengalaman
+    units: "15K+",            // Unit AC yang ditangani
+    satisfaction: "99%",      // Tingkat kepuasan pelanggan
   },
 }
 

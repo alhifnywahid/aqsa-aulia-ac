@@ -58,7 +58,7 @@ export function ThemeToggle({ isScrolled = true, className }: ThemeToggleProps) 
             exit={{ rotate: -90, scale: 0, opacity: 0 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
           >
-            <Moon className={cn("w-4 h-4", isScrolled ? "text-slate-700" : "text-blue-200")} />
+            <Moon className={cn("w-4 h-4", isScrolled ? "text-slate-700" : "text-slate-600")} />
           </motion.div>
         )}
       </AnimatePresence>

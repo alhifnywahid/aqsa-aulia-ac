@@ -1,12 +1,12 @@
 "use client"
 
 import {
-  Wrench,
-  Settings,
-  MoveRight,
   ShoppingCart,
-  Zap,
-  CalendarCheck,
+  Truck,
+  Package,
+  Store,
+  Recycle,
+  MessageCircle,
   CheckCircle2,
 } from "lucide-react"
 import { cn } from "@/lib/utils"
@@ -17,21 +17,21 @@ import { translations } from "@/lib/i18n/translations"
 import { fadeInUp, staggerContainer } from "@/lib/motion"
 
 const iconMap: Record<string, React.ElementType> = {
-  Wrench,
-  Settings,
-  MoveRight,
   ShoppingCart,
-  Zap,
-  CalendarCheck,
+  Truck,
+  Package,
+  Store,
+  Recycle,
+  MessageCircle,
 }
 
 const serviceKeys = [
-  { id: "service", icon: "Wrench", titleKey: "serviceAC", descKey: "serviceACDesc", featKey: "serviceACFeatures", color: "blue" },
-  { id: "install", icon: "Settings", titleKey: "installAC", descKey: "installACDesc", featKey: "installACFeatures", color: "cyan" },
-  { id: "relocate", icon: "MoveRight", titleKey: "relocateAC", descKey: "relocateACDesc", featKey: "relocateACFeatures", color: "indigo" },
-  { id: "buy-sell", icon: "ShoppingCart", titleKey: "buySellAC", descKey: "buySellACDesc", featKey: "buySellACFeatures", color: "sky" },
-  { id: "emergency", icon: "Zap", titleKey: "emergencyAC", descKey: "emergencyACDesc", featKey: "emergencyACFeatures", color: "blue" },
-  { id: "maintenance", icon: "CalendarCheck", titleKey: "maintenanceAC", descKey: "maintenanceACDesc", featKey: "maintenanceACFeatures", color: "cyan" },
+  { id: "buy-used", icon: "ShoppingCart", titleKey: "serviceAC", descKey: "serviceACDesc", featKey: "serviceACFeatures", color: "blue" },
+  { id: "dismantle", icon: "Truck", titleKey: "installAC", descKey: "installACDesc", featKey: "installACFeatures", color: "cyan" },
+  { id: "bulk", icon: "Package", titleKey: "relocateAC", descKey: "relocateACDesc", featKey: "relocateACFeatures", color: "indigo" },
+  { id: "sell-used", icon: "Store", titleKey: "buySellAC", descKey: "buySellACDesc", featKey: "buySellACFeatures", color: "sky" },
+  { id: "other-goods", icon: "Recycle", titleKey: "emergencyAC", descKey: "emergencyACDesc", featKey: "emergencyACFeatures", color: "blue" },
+  { id: "consultation", icon: "MessageCircle", titleKey: "maintenanceAC", descKey: "maintenanceACDesc", featKey: "maintenanceACFeatures", color: "cyan" },
 ] as const
 
 const colorMap: Record<string, string> = {
@@ -61,7 +61,7 @@ export function Services() {
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
   return (
-    <section id="layanan" className="bg-section-alt py-24 relative overflow-hidden" ref={ref}>
+    <section id="layanan" className="bg-section-alt py-14 relative overflow-hidden" ref={ref}>
       {/* Background decoration */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div className="absolute -left-32 top-20 w-72 h-72 rounded-full bg-blue-500/5 dark:bg-blue-500/3 blur-3xl" />
@@ -102,7 +102,7 @@ export function Services() {
           className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
         >
           {serviceKeys.map((service) => {
-            const Icon = iconMap[service.icon] ?? Wrench
+            const Icon = iconMap[service.icon] ?? ShoppingCart
             const colorClass = colorMap[service.color] ?? colorMap.blue
             const iconClass = iconColorMap[service.color] ?? iconColorMap.blue
             const featureClass = featureColorMap[service.color] ?? featureColorMap.blue

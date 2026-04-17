@@ -1,6 +1,7 @@
 "use client"
 
 import { ArrowRight, Shield, Star, MessageCircle, ChevronDown } from "lucide-react"
+import Link from "next/link"
 import { siteConfig } from "@/lib/constants"
 import { motion, useInView } from "motion/react"
 import { useRef } from "react"
@@ -156,7 +157,7 @@ export function Hero() {
           className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16"
         >
           <motion.a
-            href={`https://wa.me/${siteConfig.whatsapp}?text=Halo%2C%20saya%20ingin%20konsultasi%20seputar%20AC%20saya`}
+            href={`https://wa.me/${siteConfig.whatsapp}?text=Halo%2C%20saya%20ingin%20jual%20AC%20bekas%20saya`}
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.04, y: -2 }}
@@ -168,15 +169,13 @@ export function Hero() {
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </motion.a>
 
-          <motion.button
-            onClick={() => scrollToSection("#layanan")}
-            whileHover={{ scale: 1.04, y: -2 }}
-            whileTap={{ scale: 0.97 }}
-            className="flex items-center gap-2 px-7 py-4 rounded-2xl bg-slate-900/8 dark:bg-white/8 text-slate-800 dark:text-white font-semibold text-base border border-slate-200 dark:border-white/15 hover:bg-slate-900/12 dark:hover:bg-white/15 backdrop-blur-sm transition-colors duration-300"
+          <Link
+            href="/layanan"
+            className="flex items-center gap-2 px-7 py-4 rounded-2xl bg-slate-900/8 dark:bg-white/8 text-slate-800 dark:text-white font-semibold text-base border border-slate-200 dark:border-white/15 hover:bg-slate-900/12 dark:hover:bg-white/15 backdrop-blur-sm transition-colors duration-300 hover:scale-[1.04] hover:-translate-y-0.5 active:scale-[0.97] transition-all"
           >
             {t(translations.hero.ctaServices)}
-            <ChevronDown className="w-4 h-4" />
-          </motion.button>
+            <ArrowRight className="w-4 h-4" />
+          </Link>
         </motion.div>
 
         {/* Stats */}

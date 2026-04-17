@@ -1,6 +1,7 @@
 "use client"
 
 import { Wind, Phone, Mail, MapPin, MessageCircle, Instagram, Facebook, Clock } from "lucide-react"
+import Link from "next/link"
 import { siteConfig } from "@/lib/constants"
 import { motion, useInView } from "motion/react"
 import { useRef } from "react"
@@ -8,13 +9,13 @@ import { useT } from "@/lib/i18n/context"
 import { translations } from "@/lib/i18n/translations"
 import { fadeInUp, staggerContainer } from "@/lib/motion"
 
-const navSections = [
-  { key: "home" as const, href: "#hero" },
-  { key: "services" as const, href: "#layanan" },
-  { key: "whyUs" as const, href: "#keunggulan" },
-  { key: "gallery" as const, href: "#galeri" },
-  { key: "testimonials" as const, href: "#testimoni" },
-  { key: "contact" as const, href: "#kontak" },
+const navItems = [
+  { key: "home" as const, href: "/" },
+  { key: "about" as const, href: "/tentang-kami" },
+  { key: "services" as const, href: "/layanan" },
+  { key: "gallery" as const, href: "/galeri" },
+  { key: "articles" as const, href: "/artikel" },
+  { key: "contact" as const, href: "/kontak" },
 ]
 
 const serviceKeys = [
@@ -25,11 +26,6 @@ export function Footer() {
   const t = useT()
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-50px" })
-
-  const handleClick = (href: string) => {
-    const el = document.querySelector(href)
-    if (el) el.scrollIntoView({ behavior: "smooth" })
-  }
 
   return (
     <footer className="relative bg-slate-950 text-slate-300 overflow-hidden" ref={ref}>
@@ -49,7 +45,7 @@ export function Footer() {
         >
           {/* Brand */}
           <motion.div variants={fadeInUp} className="lg:col-span-1 space-y-5">
-            <div className="flex items-center gap-2.5">
+            <Link href="/" className="flex items-center gap-2.5">
               <motion.div
                 whileHover={{ rotate: 10 }}
                 className="w-10 h-10 rounded-xl gradient-brand flex items-center justify-center shadow-lg shadow-blue-500/30"
@@ -59,7 +55,7 @@ export function Footer() {
               <div className="flex flex-col leading-tight">
                 <span className="font-bold text-white text-base tracking-tight">{siteConfig.name}</span>
               </div>
-            </div>
+            </Link>
             <p className="text-sm text-slate-400 leading-relaxed">
               {t(translations.footer.brandDesc)}
             </p>
@@ -89,15 +85,16 @@ export function Footer() {
           <motion.div variants={fadeInUp} className="space-y-5">
             <h4 className="text-sm font-semibold text-white uppercase tracking-widest">{t(translations.footer.navigation)}</h4>
             <ul className="space-y-2.5">
-              {navSections.map(({ key, href }) => (
+              {navItems.map(({ key, href }) => (
                 <li key={href}>
-                  <motion.button
-                    whileHover={{ x: 4 }}
-                    onClick={() => handleClick(href)}
-                    className="text-sm text-slate-400 hover:text-blue-400 transition-colors"
-                  >
-                    {t(translations.nav[key])}
-                  </motion.button>
+                  <motion.div whileHover={{ x: 4 }}>
+                    <Link
+                      href={href}
+                      className="text-sm text-slate-400 hover:text-blue-400 transition-colors"
+                    >
+                      {t(translations.nav[key])}
+                    </Link>
+                  </motion.div>
                 </li>
               ))}
             </ul>
@@ -109,13 +106,14 @@ export function Footer() {
             <ul className="space-y-2.5">
               {serviceKeys.map((key) => (
                 <li key={key}>
-                  <motion.button
-                    whileHover={{ x: 4 }}
-                    onClick={() => handleClick("#layanan")}
-                    className="text-sm text-slate-400 hover:text-blue-400 transition-colors text-left"
-                  >
-                    {t(translations.services[key])}
-                  </motion.button>
+                  <motion.div whileHover={{ x: 4 }}>
+                    <Link
+                      href="/layanan"
+                      className="text-sm text-slate-400 hover:text-blue-400 transition-colors"
+                    >
+                      {t(translations.services[key])}
+                    </Link>
+                  </motion.div>
                 </li>
               ))}
             </ul>

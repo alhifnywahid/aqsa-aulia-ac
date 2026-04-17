@@ -4,7 +4,7 @@ import config from "@/site.config"
  * Centralized site configuration derived from `site.config.ts`.
  * Used across components for business contact info, branding, and social links.
  *
- * @see {@link file://site.config.ts} — Edit that file to change business information.
+ * @see {@link file://site.config.ts} - Edit that file to change business information.
  */
 export const siteConfig = {
   name: config.businessName,

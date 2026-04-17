@@ -1,12 +1,12 @@
 "use client"
 
 import {
-  BadgeCheck,
-  Shield,
+  DollarSign,
+  MapPin,
+  Wrench,
   Banknote,
-  Clock,
-  Star,
-  Headphones,
+  Package,
+  Award,
 } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { siteConfig } from "@/lib/constants"
@@ -16,7 +16,7 @@ import { useT } from "@/lib/i18n/context"
 import { translations } from "@/lib/i18n/translations"
 import { fadeInUp, staggerContainer, scaleIn } from "@/lib/motion"
 
-const icons = [BadgeCheck, Shield, Banknote, Clock, Star, Headphones]
+const icons = [DollarSign, MapPin, Wrench, Banknote, Package, Award]
 
 const iconColors = [
   "text-blue-500 bg-blue-500/10",
@@ -120,7 +120,7 @@ export function WhyUs() {
             </p>
           </div>
           <motion.a
-            href={`https://wa.me/${siteConfig.whatsapp}?text=Halo%2C%20saya%20ingin%20konsultasi%20gratis%20seputar%20AC`}
+            href={`https://wa.me/${siteConfig.whatsapp}?text=Halo%2C%20saya%20ingin%20jual%20AC%20bekas`}
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.05 }}

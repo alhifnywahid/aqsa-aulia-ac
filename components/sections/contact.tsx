@@ -18,7 +18,7 @@ export function Contact() {
       icon: Phone,
       title: t(translations.contact.whatsappPhone),
       value: siteConfig.whatsappDisplay,
-      action: `https://wa.me/${siteConfig.whatsapp}?text=Halo%2C%20saya%20ingin%20bertanya%20seputar%20layanan%20AC`,
+      action: `https://wa.me/${siteConfig.whatsapp}?text=Halo%2C%20saya%20ingin%20jual%20AC%20bekas`,
       actionLabel: t(translations.contact.chatNow),
       color: "text-green-500 bg-green-500/10",
     },
@@ -176,7 +176,7 @@ export function Contact() {
               </ul>
 
               <motion.a
-                href={`https://wa.me/${siteConfig.whatsapp}?text=Halo%20Aqsa%20Aulia%20AC%2C%20saya%20ingin%20konsultasi%20mengenai%20AC%20saya`}
+                href={`https://wa.me/${siteConfig.whatsapp}?text=Halo%20UD%20AQSA%20AULIA%20AC%2C%20saya%20ingin%20jual%20AC%20bekas%20saya`}
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.03 }}
