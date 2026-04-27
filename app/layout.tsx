@@ -169,6 +169,41 @@ function WebSiteJsonLd() {
     name: siteConfig.name,
     url: siteUrl,
     inLanguage: ["id", "en"],
+    potentialAction: {
+      "@type": "SearchAction",
+      target: `${siteUrl}/artikel?q={search_term_string}`,
+      "query-input": "required name=search_term_string",
+    },
+  }
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+    />
+  )
+}
+
+/**
+ * SiteNavigationElement JSON-LD to help Google generate sitelinks.
+ * This tells Google which pages are the main navigation items.
+ */
+function SiteNavigationJsonLd() {
+  const navItems = [
+    { name: "Layanan Jual Beli AC Bekas", url: `${siteUrl}/layanan` },
+    { name: "Tentang Kami", url: `${siteUrl}/tentang-kami` },
+    { name: "Galeri AC Bekas", url: `${siteUrl}/galeri` },
+    { name: "Artikel & Tips AC", url: `${siteUrl}/artikel` },
+    { name: "Kontak Kami", url: `${siteUrl}/kontak` },
+  ]
+
+  const data = {
+    "@context": "https://schema.org",
+    "@graph": navItems.map((item) => ({
+      "@type": "SiteNavigationElement",
+      name: item.name,
+      url: item.url,
+    })),
   }
 
   return (
@@ -193,6 +228,7 @@ export default function RootLayout({
       <head>
         <JsonLd />
         <WebSiteJsonLd />
+        <SiteNavigationJsonLd />
       </head>
       <Script
         src="https://www.googletagmanager.com/gtag/js?id=G-E2J1SPZ8EM"
